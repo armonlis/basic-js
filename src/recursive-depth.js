@@ -1,3 +1,9 @@
+/* this module cannot to take the test: spy1 = sinon.spy(instance, 'calculateDepth');
+                                        assert.equal(calculateDepth([1, 2, 3, 4, 5, [1, []]]), 3);
+                                        expect(spy1.callCount).to.be.greaterThan(1);
+                                        spy1.restore();*/
+
+
 /*module.exports = class DepthCalculator {
   constructor(arrTemp = [], count = 1, countTemp) {
     this.arrTemp = arrTemp,
@@ -17,12 +23,18 @@
   }
 };*/
 
+
+/*<-------------------------------------------------------------------------------------------------->
+/* this module was writen to take the test const 
+            spy1 = sinon.spy(instance, 'calculateDepth');
+            assert.equal(calculateDepth([1, 2, 3, 4, 5, [1, []]]), 3);
+            expect(spy1.callCount).to.be.greaterThan(1);
+            spy1.restore();*/
 module.exports = class DepthCalculator {
-  constructor(arrTemp = [], count = 1, countTemp, step = true) {
+  constructor(arrTemp = [], count = 1, countTemp) {
     this.arrTemp = arrTemp,
     this.count = count,
-    this.countTemp = countTemp,
-    this.step = step;
+    this.countTemp = countTemp;
   }
   
   calculateDepth(arr) {
